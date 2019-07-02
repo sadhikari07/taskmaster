@@ -33,6 +33,11 @@ The app uses postman to create, update and get tasks.Above mentioned feature tas
 ## Link to your deployed application:
 taskmaster-dev-cname.us-east-2.elasticbeanstalk.com
 
+## Routes:
+- GET request to /tasks and receive JSON data representing all of the tasks
+- POST request to /tasks with body parameters for title and description to add a new task.
+- PUT request to /tasks/{id}/state to advance the status of that task
+
 
 ## Issues faced:
 - Resource not found error due to not specifying the region.
