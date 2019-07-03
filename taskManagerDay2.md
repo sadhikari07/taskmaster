@@ -40,6 +40,11 @@ taskmaster-dev-cname.us-east-2.elasticbeanstalk.com
 - POST request to /tasks with body parameters for title, description, and assignee to add a new task.
 - PUT request to /tasks/{id}/assign/{assignee} to assign a particular user to a task.
 
+[Link to AppUserController.java](https://github.com/sadhikari07/taskmaster/blob/master/src/main/java/com/suadh/code401taskmaster/taskmasterapp/appUser/AppUserController.java)
+
+[Link to Taskmaster.java](https://github.com/sadhikari07/taskmaster/blob/master/src/main/java/com/suadh/code401taskmaster/taskmasterapp/taskmaster/Taskmaster.java)
+
+[Link to TaskmasterController.java](https://github.com/sadhikari07/taskmaster/blob/master/src/main/java/com/suadh/code401taskmaster/taskmasterapp/taskmaster/TaskmasterController.java)
 
 ## Issues faced:
 - Resource not found error due to not specifying the region.
