@@ -3,7 +3,8 @@ package com.suadh.code401taskmaster.taskmasterapp;
     import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
     import com.amazonaws.services.dynamodbv2.model.CreateTableRequest;
     import com.amazonaws.services.dynamodbv2.model.ProvisionedThroughput;
-    import javafx.application.Application;
+    import com.suadh.code401taskmaster.taskmasterapp.taskmaster.Taskmaster;
+    import com.suadh.code401taskmaster.taskmasterapp.taskmaster.TaskmasterRepository;
     import org.junit.Before;
     import org.junit.Test;
     import org.junit.runner.RunWith;
@@ -44,9 +45,8 @@ package com.suadh.code401taskmaster.taskmasterapp;
 
         @Test
         public void readWriteTestCase() {
-            Taskmaster task = new Taskmaster("lab" ,"dynamodb", "finished");
+            Taskmaster task = new Taskmaster("lab" ,"dynamodb lab", "sudip");
             repository.save(task);
-
             List<Taskmaster> result = (List<Taskmaster>) repository.findAll();
 
             assertTrue("Not empty", result.size() > 0);

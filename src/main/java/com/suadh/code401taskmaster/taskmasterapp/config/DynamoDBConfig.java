@@ -1,4 +1,4 @@
-package com.suadh.code401taskmaster.taskmasterapp;
+package com.suadh.code401taskmaster.taskmasterapp.config;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.BasicAWSCredentials;
