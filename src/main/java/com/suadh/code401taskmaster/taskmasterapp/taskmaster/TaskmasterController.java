@@ -19,9 +19,7 @@ public class TaskmasterController {
         }
 
         @PostMapping("/tasks")
-        public List postTasks(@RequestParam String title, @RequestParam String description, @RequestParam String assignee) {
-
-                Taskmaster task = new Taskmaster(title, description, assignee);
+        public List postTasks(@RequestBody Taskmaster task) {
                 if(task.getAssignee().isEmpty()){
                         task.setStatus("Available");
                 }
