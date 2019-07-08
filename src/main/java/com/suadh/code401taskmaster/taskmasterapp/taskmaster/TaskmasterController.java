@@ -30,6 +30,8 @@ public class TaskmasterController {
                return allTasks();
         }
 
+
+        @CrossOrigin(origins = {"https://master.d2rav4y8xcvo3g.amplifyapp.com/", "http://localhost:3000"})
         @GetMapping("/tasks")
         public List<Taskmaster> getTasks() {
                 return allTasks();
