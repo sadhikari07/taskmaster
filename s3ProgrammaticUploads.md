@@ -18,7 +18,9 @@ The app uses postman to create, update and get tasks. The app has ability to add
 Above mentioned feature tasks are implemented on the app.
 
 ## Link to the deployed application:
-taskmaster-dev-cname.us-east-2.elasticbeanstalk.com
+- API: http://taskmaster-dev-cname.us-east-2.elasticbeanstalk.com/tasks
+- Deployed Front-end:http://taskmasterfrontend.s3-website-us-east-1.amazonaws.com/ 
+
 
 ## Routes:
 - GET request to /tasks and receive JSON data representing all of the tasks
