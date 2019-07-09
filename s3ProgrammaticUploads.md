@@ -40,5 +40,5 @@ taskmaster-dev-cname.us-east-2.elasticbeanstalk.com
 - Having to create a personal free tier AWS account to set up deployment.
 
 Resources:
-https://github.com/codefellows/seattle-java-401d4/tree/master/class-26
-https://github.com/codefellows/seattle-java-401d4/tree/master/class-29/demo
+- https://github.com/codefellows/seattle-java-401d4/tree/master/class-26
+- https://github.com/codefellows/seattle-java-401d4/tree/master/class-29/demo
