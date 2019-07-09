@@ -14,8 +14,6 @@ public class TaskmasterappApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TaskmasterappApplication.class, args);
-		System.out.println(amazonAWSSecretKey);
-		System.out.println();
 	}
 
 }
