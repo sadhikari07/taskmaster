@@ -28,14 +28,9 @@ We’ll use it today to automatically run some processing on image files after t
 - POST request to /tasks/{id}/images to save an image to a particular task with that id.
 - GET request to /tasks/{id} to display one particular task with the image assosiated with it.
 
-[Link to AppUserController.java](https://github.com/sadhikari07/taskmaster/blob/master/src/main/java/com/suadh/code401taskmaster/taskmasterapp/appUser/AppUserController.java)
-
-[Link to Taskmaster.java](https://github.com/sadhikari07/taskmaster/blob/master/src/main/java/com/suadh/code401taskmaster/taskmasterapp/taskmaster/Taskmaster.java)
-
-[Link to TaskmasterController.java](https://github.com/sadhikari07/taskmaster/blob/master/src/main/java/com/suadh/code401taskmaster/taskmasterapp/taskmaster/TaskmasterController.java)
 
 ## Issues faced:
-- Having to create a personal free tier AWS account to set up deployment.
+- Having to reacreate lambda function.
 
 Resources:
 - https://github.com/codefellows/seattle-java-401d4/tree/master/class-26
