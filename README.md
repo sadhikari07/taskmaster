@@ -7,3 +7,5 @@
 [Readme for S3 Programmatic uploads](https://github.com/sadhikari07/taskmaster/blob/master/s3ProgrammaticUploads.md)
 
 [Readme for Lambda](https://github.com/sadhikari07/taskmaster/blob/master/lambda.md)
+
+[Readme for SQS with lambda](https://github.com/sadhikari07/taskmaster/blob/master/lambda.md)
