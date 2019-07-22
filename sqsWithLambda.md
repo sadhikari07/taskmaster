@@ -37,4 +37,11 @@ The above mentioned tasks were compoleted by taking the approach listed below:
   - The queue triggered lambda funciton that resized the image.
   ![Screen shot](https://raw.githubusercontent.com/sadhikari07/taskmaster/master/assets/lambda%26sqs.png)
   
-  
+  ## Resources:
+ - https://stackoverflow.com/questions/672916/how-to-get-image-height-and-width-using-java
+ - https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html
+- https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html#sms_publish_console
+- https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-using-sdk-java.html
+- https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-using-sdk-java.html
+- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-ses/1.11.595
+
