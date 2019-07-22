@@ -7,15 +7,21 @@ import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.amazonaws.services.sqs.AmazonSQS;
+import com.amazonaws.services.sqs.AmazonSQSClientBuilder;
+import com.amazonaws.services.sqs.model.SendMessageRequest;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.PostConstruct;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
+
 
 @Service
 public class S3Client {
@@ -24,6 +30,9 @@ public class S3Client {
 
     @Value("${amazon.s3.endpoint}")
     private String endpointUrl;
+
+    @Value("${amazon.s3.resized.endpoint}")
+    private String endpointUrlResized;
 
     @Value("${amazon.s3.accesskey}")
     private String accessKey;
@@ -41,19 +50,33 @@ public class S3Client {
         this.s3client = new AmazonS3Client(credentials);
     }
 
-    public String uploadFile(MultipartFile multipartFile) {
+    public ArrayList<String> uploadFile(MultipartFile multipartFile) {
+        ArrayList<String> fileURLs = new ArrayList<>();
         String fileUrl = "";
+        String resizedFileURL = "";
         try {
             File file = convertMultiPartToFile(multipartFile);
             String fileName = generateFileName(multipartFile);
             fileUrl = endpointUrl + "/" + fileName;
-            uploadFileTos3bucket(fileName, file);
-            file.delete();
+
+            if(multipartFile.getSize()>350000) {
+                sqsSend();
+            }
+
+                resizedFileURL = endpointUrlResized + "/" + "resized-" + fileName;
+                uploadFileTos3bucket(fileName, file);
+                file.delete();
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return fileUrl;
+
+        fileURLs.add(fileUrl);
+        fileURLs.add(resizedFileURL);
+        return fileURLs;
     }
+
 
     private File convertMultiPartToFile(MultipartFile file) throws IOException {
         File convFile = new File(file.getOriginalFilename());
@@ -78,4 +101,19 @@ public class S3Client {
         return "Successfully deleted";
     }
 
+
+
+    public void sqsSend(){
+        final AmazonSQS sqs = AmazonSQSClientBuilder.defaultClient();
+
+        String queueUrl = System.getenv("QUEUE");
+                SendMessageRequest send_msg_request = new SendMessageRequest()
+                        .withQueueUrl(queueUrl)
+                        .withMessageBody("Image uploaded to be resized")
+                        .withDelaySeconds(5);
+                sqs.sendMessage(send_msg_request);
+            }
 }
+
+
+//https://stackoverflow.com/questions/672916/how-to-get-image-height-and-width-using-java
