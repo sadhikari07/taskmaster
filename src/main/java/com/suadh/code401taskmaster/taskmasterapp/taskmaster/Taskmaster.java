@@ -16,6 +16,7 @@ import java.util.UUID;
     private String status;
     private String assignee;
     private String pic;
+    private String picResized;
 
 
     public Taskmaster() {
@@ -27,6 +28,7 @@ import java.util.UUID;
         this.description = description;
         this.assignee = assignee;
         this.pic = null;
+        this.picResized = null;
     }
 
     @DynamoDBHashKey
@@ -60,6 +62,10 @@ import java.util.UUID;
         return pic;
     }
 
+    @DynamoDBAttribute
+    public String getPicResized() {
+        return picResized;
+    }
 
     public void setTaskId(UUID taskId) {
         this.taskId = taskId;
@@ -81,6 +87,10 @@ import java.util.UUID;
 
     public void setPic(String pic) {
         this.pic = pic;
+    }
+
+    public void setPicResized(String picResized) {
+        this.picResized = picResized;
     }
 
 }
