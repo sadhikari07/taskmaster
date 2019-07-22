@@ -8,4 +8,4 @@
 
 [Readme for Lambda](https://github.com/sadhikari07/taskmaster/blob/master/lambda.md)
 
-[Readme for SQS with lambda](https://github.com/sadhikari07/taskmaster/blob/master/lambda.md)
+[Readme for SQS with lambda](https://github.com/sadhikari07/taskmaster/blob/master/sqsWithLambda.md)
